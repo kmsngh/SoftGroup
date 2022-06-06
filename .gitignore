@@ -1,0 +1,14 @@
+**/.ipynb_checkpoints
+**/__pycache__
+/.vscode
+/dataset/s3dis/preprocess*
+/dataset/s3dis/val_gt*
+/dataset/s3dis/Stanford3dDataset_v1.2
+/dataset/scannetv2/test
+/dataset/scannetv2/train
+/dataset/scannetv2/val
+/dataset/scannetv2/val_gt
+/dataset/scannetv2/*.txt
+/dataset/scannetv2/*.tsv
+/work_dirs
+/*.pth
