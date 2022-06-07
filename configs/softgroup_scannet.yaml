@@ -1,5 +1,5 @@
 model:
-  feat_dim: 32
+  in_feat_dim: 32
   num_blocks: 7
   semantic_classes: 20
   instance_classes: 18

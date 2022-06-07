@@ -46,7 +46,7 @@ class TopDownRefinement(nn.Module):
         self.cls_linear = nn.Linear(in_feat_dim, instance_classes + 1)
 
         # Segmentation branch
-        self.mask_linear = MLPBlock(in_feat_dim, instance_classes + 1, norm_fn=None, num_layers=2)
+        self.mask_linear = MLPBlock(in_feat_dim, instance_classes + 1, normalizer=None, num_layers=2)
 
         # Mask scoring branch
         self.iou_score_linear = nn.Linear(in_feat_dim, instance_classes + 1)
@@ -172,7 +172,7 @@ class TopDownRefinement(nn.Module):
         if not expand:
             return x_pool
 
-        x_pool_expand = x_pool[indices.long()]
+        x_pool_expand = x_pool[x.indices[:, 0].long()]
         x.features = torch.cat((x.features, x_pool_expand), dim=1)
         return x
 
